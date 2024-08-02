@@ -1,0 +1,6 @@
+@PB.CadastroCliente.API_HostAddress = http://localhost:5225
+
+GET {{PB.CadastroCliente.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
