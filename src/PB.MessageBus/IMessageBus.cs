@@ -15,7 +15,7 @@ public interface IMessageBus : IDisposable
 
     void Subscribe<T>(string subscriptionId, Action<T> onMessage) where T : class;
 
-    AwaitableDisposable<ISubscriptionResult> SubscribeAsync<T>(string subscriptionId, Func<T, Task> onMessage) where T : class;
+   // AwaitableDisposable<ISubscriptionResult> SubscribeAsync<T>(string subscriptionId, Func<T, Task> onMessage) where T : class;
 
     TResponse Request<TRequest, TResponse>(TRequest request)
         where TRequest : IntegrationEvent

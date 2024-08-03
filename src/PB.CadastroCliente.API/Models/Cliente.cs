@@ -9,7 +9,7 @@ namespace PB.CadastroCliente.API.Models
 
         }
 
-        public Cliente(Guid id, string nome, DateOnly dataNascimento, Cpf cpf, Email email, string celular, DateTime dataCadastro)
+        public Cliente(Guid id, string nome, DateTime dataNascimento, Cpf cpf, Email email, int celular, DateTime dataCadastro)
         {
             Id = id;
             Nome = nome;
@@ -21,10 +21,10 @@ namespace PB.CadastroCliente.API.Models
         }
 
         public string Nome { get; private set; }
-        public DateOnly DataNascimento { get; private set; }
+        public DateTime DataNascimento { get; private set; }
         public Cpf Cpf { get; private set; }
         public Email Email { get; private set; }
-        public string Celular { get; private set; }
+        public int Celular { get; private set; }
         public DateTime DataCadastro { get; private set; }
 
 

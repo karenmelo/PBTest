@@ -4,6 +4,10 @@ namespace PB.CadastroCliente.API.Models;
 
 public class Endereco : Entity
 {
+    //public Endereco()
+    //{
+        
+    //}
     public Endereco(string logradouro, int numero, string complemento, string bairro, string cidade, string cep, string estado, string pais, bool principal)
     {
         Logradouro = logradouro;
@@ -29,5 +33,5 @@ public class Endereco : Entity
 
 
     public int ClienteId { get; set; }
-    public Cliente Clientes { get; set; }
+    public Cliente Cliente { get; set; }
 }

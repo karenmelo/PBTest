@@ -4,9 +4,7 @@ using PB.Core.Data;
 using PB.Core.DomainObject;
 using PB.Core.Mediator;
 using PB.Core.Message;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Reflection.Emit;
 
 namespace PB.CadastroCliente.API.Data
 {

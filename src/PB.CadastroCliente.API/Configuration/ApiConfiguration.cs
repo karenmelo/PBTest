@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PB.CadastroCliente.API.Data;
+using System.Reflection;
 
 namespace PB.CadastroCliente.API.Configuration;
 
@@ -12,9 +13,13 @@ public static class ApiConfiguration
             options.UseSqlServer(configuration.GetConnectionString("DbCliente"));
         });
 
+        services.AddDbContext<ClienteContext>();
+
         services.AddControllers();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
+
+        services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
         services.AddCors(options =>
         {

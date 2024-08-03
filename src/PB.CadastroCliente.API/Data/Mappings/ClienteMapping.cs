@@ -49,7 +49,7 @@ namespace PB.CadastroCliente.API.Data.Mappings
 
             //1:1 => cliente : endereco
             builder.HasOne(c => c.Endereco)
-                   .WithOne(c => c.Clientes);
+                   .WithOne(c => c.Cliente);
 
 
             builder.ToTable("Clientes");

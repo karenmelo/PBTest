@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PB.CadastroCliente.API.Models;
+using System.Threading.Tasks.Dataflow;
 
 namespace PB.CadastroCliente.API.Data.Mappings
 {
@@ -39,6 +40,11 @@ namespace PB.CadastroCliente.API.Data.Mappings
             builder.Property(e => e.Pais)
                    .IsRequired()
                    .HasColumnType("varchar(50)");
+
+
+            builder.HasOne(e => e.Cliente)
+                   .WithOne(e => e.Endereco)
+                   .HasForeignKey<Cliente>(p => new { p.Id}); ;
 
 
             builder.ToTable("Enderecos");

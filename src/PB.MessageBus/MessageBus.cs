@@ -1,6 +1,7 @@
 ﻿using EasyNetQ;
 using EasyNetQ.Internals;
 using PB.Core.Message;
+using Polly;
 using RabbitMQ.Client.Exceptions;
 
 namespace PB.MessageBus;
@@ -40,12 +41,12 @@ public class MessageBus : IMessageBus
         _bus.PubSub.Subscribe(subscriptionId, onMessage);
     }
 
-    public AwaitableDisposable<ISubscriptionResult> SubscribeAsync<T>(string subscriptionId,
-        Func<T, Task> onMessage) where T : class
-    {
-        TryConnect();
-        return _bus.PubSub.SubscribeAsync(subscriptionId, onMessage);
-    }
+    //public AwaitableDisposable<ISubscriptionResult> SubscribeAsync<T>(string subscriptionId,
+    //    Func<T, Task> onMessage) where T : class
+    //{
+    //    TryConnect();
+    //    return _bus.PubSub.SubscribeAsync(subscriptionId, onMessage);
+    //}
 
     public TResponse Request<TRequest, TResponse>(TRequest request) where TRequest : IntegrationEvent
         where TResponse : ResponseMessage
